@@ -20,4 +20,10 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class TopicExchangeProducer {
     private final RabbitTemplate rabbitTemplate;
+
+    public void sendMessage() {
+        sendMsg("taxi.normal.small");
+        sendMsg("whatever.any.large");
+        sendMsg("taxi.eco.additional.words");
+    }
 }
