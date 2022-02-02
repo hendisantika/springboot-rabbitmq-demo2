@@ -26,4 +26,9 @@ public class QueuesConfiguration {
     public Queue queueTaxiDefault() {
         return new Queue(QUEUE_TAXI_DEFAULT);
     }
+
+    @Bean
+    public Queue queueTaxiNormalSmall() {
+        return new Queue(QUEUE_TAXI_NORMAL_SMALL);
+    }
 }
