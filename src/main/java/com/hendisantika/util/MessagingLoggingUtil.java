@@ -1,5 +1,6 @@
 package com.hendisantika.util;
 
+import com.hendisantika.model.OrderTaxiMessage;
 import lombok.experimental.UtilityClass;
 import lombok.extern.slf4j.Slf4j;
 
@@ -16,4 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @UtilityClass
 public class MessagingLoggingUtil {
+    public static void logReceivedMessage(String queue, OrderTaxiMessage message) {
+        log.info("Listener on queue [{}] received message [{}]", queue, message);
+    }
 }
