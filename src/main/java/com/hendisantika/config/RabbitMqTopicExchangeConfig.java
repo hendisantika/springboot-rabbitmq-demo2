@@ -1,5 +1,7 @@
 package com.hendisantika.config;
 
+import org.springframework.amqp.core.TopicExchange;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -15,4 +17,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitMqTopicExchangeConfig {
     public static final String EXCHANGE_TAXI_TOPIC = "x.taxi.topic";
+
+    @Bean
+    public TopicExchange exchangeTaxiTopic() {
+        return new TopicExchange(EXCHANGE_TAXI_TOPIC);
+    }
 }
