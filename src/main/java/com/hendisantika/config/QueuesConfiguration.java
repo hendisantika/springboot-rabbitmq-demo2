@@ -1,5 +1,7 @@
 package com.hendisantika.config;
 
+import org.springframework.amqp.core.Queue;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -19,4 +21,9 @@ public class QueuesConfiguration {
     public static final String QUEUE_TAXI_ECO_SMALL = "q.taxi.eco.small";
     public static final String QUEUE_TAXI_NORMAL_LARGE = "q.taxi.normal.large";
     public static final String QUEUE_TAXI_ECO_LARGE = "q.taxi.eco.large";
+
+    @Bean
+    public Queue queueTaxiDefault() {
+        return new Queue(QUEUE_TAXI_DEFAULT);
+    }
 }
