@@ -1,5 +1,7 @@
 package com.hendisantika.config;
 
+import org.springframework.amqp.core.DirectExchange;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -19,4 +21,9 @@ public class RabbitMqDirectExchangeConfig {
     public static final String ROUTING_KEY_TAXI_ECO_SMALL = "taxi.eco.small";
     public static final String ROUTING_KEY_TAXI_NORMAL_LARGE = "taxi.normal.large";
     public static final String ROUTING_KEY_TAXI_ECO_LARGE = "taxi.eco.large";
+
+    @Bean
+    public DirectExchange exchangeTaxiDirect() {
+        return new DirectExchange(EXCHANGE_TAXI_DIRECT);
+    }
 }
