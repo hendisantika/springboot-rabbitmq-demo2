@@ -41,4 +41,9 @@ public class QueuesConfiguration {
     public Queue queueTaxiNormalLarge() {
         return new Queue(QUEUE_TAXI_NORMAL_LARGE);
     }
+
+    @Bean
+    public Queue queueTaxiEcoLarge() {
+        return new Queue(QUEUE_TAXI_ECO_LARGE);
+    }
 }
