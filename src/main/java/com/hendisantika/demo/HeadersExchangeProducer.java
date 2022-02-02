@@ -20,4 +20,11 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class HeadersExchangeProducer {
     private final RabbitTemplate rabbitTemplate;
+
+    public void sendMessage() {
+        sendMsg("eco.small", 1);
+        sendMsg("eco.large", 1);
+        sendMsg("eco.large", 2);
+        sendMsg("eco.large", 3);
+    }
 }
