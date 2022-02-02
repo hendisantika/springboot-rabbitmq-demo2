@@ -6,6 +6,7 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Service;
 
 import static com.hendisantika.config.QueuesConfiguration.QUEUE_TAXI_DEFAULT;
+import static com.hendisantika.config.QueuesConfiguration.QUEUE_TAXI_NORMAL_SMALL;
 import static com.hendisantika.util.MessagingLoggingUtil.logReceivedMessage;
 
 /**
@@ -27,4 +28,8 @@ public class TaxiQueuesListener {
         logReceivedMessage(QUEUE_TAXI_DEFAULT, message);
     }
 
+    @RabbitListener(queues = {QUEUE_TAXI_NORMAL_SMALL})
+    public void listenOnQueueTaxiNormalSmall(OrderTaxiMessage message) {
+        logReceivedMessage(QUEUE_TAXI_NORMAL_SMALL, message);
+    }
 }
