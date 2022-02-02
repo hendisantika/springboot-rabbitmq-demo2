@@ -41,4 +41,9 @@ public class TaxiQueuesListener {
     public void listenOnQueueTaxiEcoLarge(OrderTaxiMessage message) {
         logReceivedMessage(QUEUE_TAXI_ECO_LARGE, message);
     }
+
+    @RabbitListener(queues = {QUEUE_TAXI_NORMAL_LARGE})
+    public void listenOnQueueTaxiNormalLarge(OrderTaxiMessage message) {
+        logReceivedMessage(QUEUE_TAXI_NORMAL_LARGE, message);
+    }
 }
