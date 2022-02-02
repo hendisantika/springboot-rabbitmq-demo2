@@ -1,5 +1,7 @@
 package com.hendisantika.config;
 
+import org.springframework.amqp.core.FanoutExchange;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -15,4 +17,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitMqFanoutExchangeConfig {
     public static final String EXCHANGE_TAXI_FANOUT = "x.taxi.fanout";
+
+    @Bean
+    public FanoutExchange exchangeTaxiFanout() {
+        return new FanoutExchange(EXCHANGE_TAXI_FANOUT);
+    }
 }
