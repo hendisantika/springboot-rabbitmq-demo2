@@ -1,5 +1,7 @@
 package com.hendisantika.config;
 
+import org.springframework.amqp.core.HeadersExchange;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -15,4 +17,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitMqHeadersExchangeConfig {
     public static final String EXCHANGE_TAXI_HEADERS = "x.taxi.headers";
+
+    @Bean
+    public HeadersExchange exchangeTaxiHeaders() {
+        return new HeadersExchange(EXCHANGE_TAXI_HEADERS);
+    }
 }
